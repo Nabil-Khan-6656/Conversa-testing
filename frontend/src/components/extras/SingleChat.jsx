@@ -11,7 +11,6 @@ import ScrollableChat from './ScrollableChat'
 import io from "socket.io-client"
 import  Lottie  from "react-lottie"
 import animationData from "../../animations/typing.json"
-import NotificationAudio from "../../audio/ding.mp3"
 import MessageSentAudio from "../../audio/message-sent.mp3"
 
 
@@ -32,10 +31,6 @@ const SingleChat = ({fetchAgain , setFetchAgain}) => {
   const[isTyping , setIsTyping]= useState(false)
     const { user , selectedChat , setSelectedChat ,notification , setNotification} = ChatState()
 
-
-    function play(){
-      new Audio(NotificationAudio).play()
-    }
 
     function playSendMessage(){
       new Audio(MessageSentAudio).play()
@@ -179,7 +174,6 @@ const SingleChat = ({fetchAgain , setFetchAgain}) => {
 
           if(!notification.includes(newMessageReceived)){
             setNotification([newMessageReceived,...notification])
-            play()
             setFetchAgain(!fetchAgain)
         
           }
