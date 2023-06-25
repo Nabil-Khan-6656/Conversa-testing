@@ -16,7 +16,7 @@ import MessageSentAudio from "../../audio/message-sent.mp3"
 
 
 
-const ENDPOINT = "http://localhost:5000"
+const ENDPOINT = "https://conversa-testing-trial.onrender.com"
 
 
 
